@@ -1,0 +1,1184 @@
+/**
+ * Stage 5 — Neutral Black / White / Grey Museum Placard, Header & Archive Gallery Styles
+ *
+ * Enforces pure achromatic Black / White / Grey UI (`R === G === B`, zero brown/sepia):
+ *   1. Dark Gallery Matte (`#121212` / `#1c1c1c`, white ink `#f5f5f5`, neutral grey `#d4d4d4`)
+ *   2. Light Gallery Card (`#f2f2f2` / `#ffffff`, black ink `#121212`, neutral grey `#383838`)
+ *   3. Borderless streamlined label overlays (`border: none`, `border-left: none`, zero chips,
+ *      zero supporting-plates section, zero step counters)
+ *   4. Zero external fonts/CDNs, zero `backdrop-filter`, zero synthetic `sepia()` image filters
+ */
+
+:root {
+  /* Dark Gallery Matte Tokens (WCAG AA/AAA verified, strictly achromatic) */
+  --bg-museum-canvas: #121212;
+  --surface-plate-plinth: #1c1c1c;
+  --surface-plate-elevated: #292929;
+  --surface-plate-active: #363636;
+  --surface-plate-overlay: rgba(18, 18, 18, 0.90);
+  --surface-dark-placard: rgba(20, 20, 20, 0.93);
+  --border-plate-subtle: #383838;
+  --border-plate-interactive: #737373;
+  --text-on-dark-primary: #f5f5f5;
+  --text-on-dark-secondary: #d4d4d4;
+  --text-on-dark-muted: #a3a3a3;
+  --accent-on-dark-vellum: #ffffff;
+  --accent-on-dark-iron: #bdbdbd;
+  --focus-ring-on-dark: #ffffff;
+
+  /* Light Gallery Paper & Card Tokens (WCAG AA/AAA verified, strictly achromatic) */
+  --bg-vellum-paper: #f2f2f2;
+  --surface-vellum-card: #ffffff;
+  --surface-vellum-inset: #e6e6e6;
+  --surface-photo-placard: rgba(255, 255, 255, 0.94);
+  --border-vellum-subtle: #d4d4d4;
+  --border-vellum-interactive: #737373;
+  --text-on-light-primary: #121212;
+  --text-on-light-secondary: #383838;
+  --text-on-light-muted: #595959;
+  --accent-on-light-iron: #141414;
+  --accent-on-light-sage: #474747;
+  --focus-ring-on-light: #121212;
+
+  /* Offline Museum Typography Stack */
+  --m2-font-serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, "Times New Roman", serif;
+  --m2-font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --m2-font-mono: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+
+  /* Safe bottom clearance reserved for the single playthrough bar */
+  --m2-bottom-bar-clearance: 92px;
+}
+
+.m2-exhibition-header [hidden],
+.m2-placard [hidden],
+.m2-archive-drawer [hidden],
+.m2-lightbox [hidden] {
+  display: none !important;
+}
+
+/* ==========================================================================
+   1. Quiet Exhibition Top Header
+   ========================================================================== */
+
+.m2-exhibition-header {
+  position: fixed;
+  top: 18px;
+  left: 22px;
+  right: 22px;
+  z-index: 24;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  pointer-events: none;
+  font-family: var(--m2-font-sans);
+}
+
+.m2-exhibition-header[hidden] {
+  display: none !important;
+}
+
+.m2-brand-mark {
+  pointer-events: auto;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 7px 12px;
+  background: var(--surface-plate-overlay, rgba(18, 18, 18, 0.90));
+  border: 1px solid var(--border-plate-subtle, #383838);
+  border-radius: 2px;
+  color: var(--text-on-dark-primary, #f5f5f5);
+}
+
+.m2-brand-title {
+  font-family: var(--m2-font-serif);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: var(--text-on-dark-primary, #f5f5f5);
+}
+
+.m2-brand-subtitle {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--text-on-dark-muted, #a3a3a3);
+}
+
+.m2-header-actions {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  background: var(--surface-plate-plinth, #1c1c1c);
+  border: 1px solid var(--border-plate-subtle, #383838);
+  border-radius: 2px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.38);
+}
+
+.m2-header-btn {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-right: 1px solid var(--border-plate-subtle, #383838);
+  color: var(--text-on-dark-secondary, #d4d4d4);
+  font-family: var(--m2-font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 8px 13px;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.m2-header-btn:last-child {
+  border-right: 0;
+}
+
+.m2-header-btn:hover {
+  background: var(--surface-plate-elevated, #292929);
+  color: var(--text-on-dark-primary, #f5f5f5);
+}
+
+.m2-header-btn:focus-visible {
+  outline: 2px solid var(--focus-ring-on-dark, #ffffff);
+  outline-offset: -2px;
+}
+
+.m2-header-count {
+  display: none !important;
+}
+
+/* ==========================================================================
+   2. Negative-Space Museum Exhibition Placard (`MuseumPlacard`)
+      (Zero Left Border · Zero Metadata Chips · Zero Supporting Plates)
+   ========================================================================== */
+
+.m2-placard {
+  position: fixed;
+  z-index: 20;
+  width: min(344px, calc(100vw - 40px));
+  padding: 14px 16px 13px;
+  border: none;
+  border-left: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: opacity 220ms ease;
+}
+
+.m2-placard[hidden] {
+  display: none !important;
+}
+
+/* Surface Polarity A: Light White Gallery Card (over light skies, Folio Plate 55 & Stop 11) */
+.m2-placard[data-theme="light_vellum"] {
+  background: var(--surface-photo-placard, rgba(255, 255, 255, 0.94));
+  color: var(--text-on-light-primary, #121212);
+  border: none;
+  border-left: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Surface Polarity B: Dark Charcoal Gallery Plinth (over dark margins & 3D peek) */
+.m2-placard[data-theme="dark_plinth"] {
+  background: var(--surface-dark-placard, rgba(20, 20, 20, 0.93));
+  color: var(--text-on-dark-primary, #f5f5f5);
+  border: none;
+  border-left: none;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.44);
+}
+
+.m2-placard-eyebrow-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.m2-placard-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-family: var(--m2-font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.m2-placard[data-theme="light_vellum"] .m2-placard-meta {
+  color: var(--text-on-light-muted, #595959);
+}
+
+.m2-placard[data-theme="dark_plinth"] .m2-placard-meta {
+  color: var(--text-on-dark-muted, #a3a3a3);
+}
+
+/* Defensive CSS backstop: hide step counters, metadata chips & supporting plates */
+.m2-placard-stop-num,
+.m2-placard-sep,
+.m2-placard-inscription-row,
+.m2-placard-tag,
+.m2-placard-support,
+.m2-support-chip {
+  display: none !important;
+}
+
+.m2-placard-collapse-btn {
+  appearance: none;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: var(--m2-font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: inherit;
+  opacity: 0.78;
+  transition: opacity 140ms ease, background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+
+.m2-placard-toggle-glyph {
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.m2-placard-collapse-btn:hover {
+  opacity: 1;
+}
+
+.m2-placard[data-theme="light_vellum"] .m2-placard-collapse-btn {
+  color: var(--text-on-light-muted, #595959);
+}
+
+.m2-placard[data-theme="light_vellum"] .m2-placard-collapse-btn:hover,
+.m2-placard[data-theme="light_vellum"].is-collapsed .m2-placard-collapse-btn {
+  background: var(--surface-vellum-inset, #e6e6e6);
+  border-color: var(--border-vellum-subtle, #d4d4d4);
+  color: var(--text-on-light-primary, #121212);
+  opacity: 1;
+}
+
+.m2-placard[data-theme="dark_plinth"] .m2-placard-collapse-btn {
+  color: var(--text-on-dark-muted, #a3a3a3);
+}
+
+.m2-placard[data-theme="dark_plinth"] .m2-placard-collapse-btn:hover,
+.m2-placard[data-theme="dark_plinth"].is-collapsed .m2-placard-collapse-btn {
+  background: var(--surface-plate-elevated, #292929);
+  border-color: var(--border-plate-subtle, #383838);
+  color: var(--text-on-dark-primary, #f5f5f5);
+  opacity: 1;
+}
+
+.m2-placard[data-theme="light_vellum"] .m2-placard-collapse-btn:focus-visible {
+  outline: 2px solid var(--focus-ring-on-light, #121212);
+}
+
+.m2-placard[data-theme="dark_plinth"] .m2-placard-collapse-btn:focus-visible {
+  outline: 2px solid var(--focus-ring-on-dark, #ffffff);
+}
+
+.m2-placard-headline {
+  margin: 0 0 7px;
+  font-family: var(--m2-font-serif);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.26;
+  letter-spacing: -0.01em;
+}
+
+.m2-placard.is-collapsed {
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+
+.m2-placard.is-collapsed .m2-placard-eyebrow-row {
+  margin-bottom: 3px;
+}
+
+.m2-placard.is-collapsed .m2-placard-headline {
+  margin-bottom: 0;
+  font-size: 15px;
+}
+
+.m2-placard.is-collapsed .m2-placard-body {
+  display: none;
+}
+
+.m2-placard-narrative {
+  margin: 0 0 9px;
+  font-family: var(--m2-font-sans);
+  font-size: 12.8px;
+  line-height: 1.5;
+}
+
+.m2-placard[data-theme="light_vellum"] .m2-placard-narrative {
+  color: var(--text-on-light-secondary, #383838);
+}
+
+.m2-placard[data-theme="dark_plinth"] .m2-placard-narrative {
+  color: var(--text-on-dark-secondary, #d4d4d4);
+}
+
+.m2-placard-elevation {
+  font-family: var(--m2-font-sans);
+  font-size: 11.5px;
+  line-height: 1.35;
+  padding-top: 8px;
+  border-top: 1px solid;
+}
+
+.m2-placard[data-theme="light_vellum"] .m2-placard-elevation {
+  color: var(--text-on-light-muted, #595959);
+  border-top-color: var(--border-vellum-subtle, #d4d4d4);
+}
+
+.m2-placard[data-theme="dark_plinth"] .m2-placard-elevation {
+  color: var(--text-on-dark-muted, #a3a3a3);
+  border-top-color: var(--border-plate-subtle, #383838);
+}
+
+.m2-placard-section-label {
+  font-family: var(--m2-font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.m2-placard[data-theme="light_vellum"] .m2-placard-section-label {
+  color: var(--text-on-light-muted, #595959);
+}
+
+.m2-placard[data-theme="dark_plinth"] .m2-placard-section-label {
+  color: var(--text-on-dark-muted, #a3a3a3);
+}
+
+/* Stop 11 Hero 3D Model Showcase Craftsmanship Presets */
+.m2-hero-presets {
+  margin-top: 10px;
+  padding-top: 9px;
+  border-top: 1px solid var(--border-vellum-subtle, #d4d4d4);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.m2-placard[data-theme="dark_plinth"] .m2-hero-presets {
+  border-top-color: var(--border-plate-subtle, #383838);
+}
+
+.m2-hero-preset-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.m2-hero-preset-btn {
+  appearance: none;
+  width: 100%;
+  text-align: left;
+  padding: 6px 9px;
+  border-radius: 2px;
+  font-family: var(--m2-font-sans);
+  font-size: 11.8px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.m2-placard[data-theme="light_vellum"] .m2-hero-preset-btn {
+  background: var(--surface-vellum-card, #ffffff);
+  color: var(--text-on-light-primary, #121212);
+  border: 1px solid var(--border-vellum-subtle, #d4d4d4);
+}
+
+.m2-placard[data-theme="light_vellum"] .m2-hero-preset-btn:hover {
+  background: var(--surface-vellum-inset, #e6e6e6);
+  border-color: var(--border-vellum-interactive, #737373);
+}
+
+.m2-placard[data-theme="light_vellum"] .m2-hero-preset-btn.is-active {
+  background: var(--accent-on-light-iron, #141414);
+  color: var(--surface-vellum-card, #ffffff);
+  border-color: var(--accent-on-light-iron, #141414);
+}
+
+.m2-placard[data-theme="dark_plinth"] .m2-hero-preset-btn {
+  background: var(--surface-plate-elevated, #292929);
+  color: var(--text-on-dark-primary, #f5f5f5);
+  border: 1px solid var(--border-plate-subtle, #383838);
+}
+
+.m2-placard[data-theme="dark_plinth"] .m2-hero-preset-btn:hover {
+  background: var(--surface-plate-active, #363636);
+  border-color: var(--border-plate-interactive, #737373);
+}
+
+.m2-placard[data-theme="dark_plinth"] .m2-hero-preset-btn.is-active {
+  background: var(--accent-on-dark-vellum, #ffffff);
+  color: var(--bg-museum-canvas, #121212);
+  border-color: var(--accent-on-dark-vellum, #ffffff);
+}
+
+.m2-hero-preset-num {
+  font-family: var(--m2-font-mono);
+  font-size: 10.5px;
+  opacity: 0.78;
+  min-width: 18px;
+}
+
+.m2-hero-preset-caption {
+  margin: 4px 0 0;
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: var(--text-on-light-muted, #595959);
+}
+
+.m2-placard[data-theme="dark_plinth"] .m2-hero-preset-caption {
+  color: var(--text-on-dark-muted, #a3a3a3);
+}
+
+.m2-hero-archive-cta {
+  margin-top: 8px;
+  appearance: none;
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: 2px;
+  font-family: var(--m2-font-sans);
+  font-size: 11.8px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text-on-light-primary, #121212);
+  border: 1px solid var(--border-vellum-interactive, #737373);
+}
+
+.m2-hero-archive-cta:hover {
+  background: var(--surface-vellum-inset, #e6e6e6);
+}
+
+.m2-placard[data-theme="dark_plinth"] .m2-hero-archive-cta {
+  color: var(--text-on-dark-primary, #f5f5f5);
+  border-color: var(--border-plate-interactive, #737373);
+}
+
+.m2-placard[data-theme="dark_plinth"] .m2-hero-archive-cta:hover {
+  background: var(--surface-plate-elevated, #292929);
+}
+
+/* ==========================================================================
+   3. Optional Archive Photographs & Monograph Plates Light-Table (`ArchiveGallery`)
+   ========================================================================== */
+
+.m2-archive-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  pointer-events: auto;
+  background: var(--bg-vellum-paper, #f2f2f2);
+  color: var(--text-on-light-primary, #121212);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: var(--m2-font-sans);
+}
+
+.m2-archive-drawer[hidden] {
+  display: none !important;
+}
+
+.m2-archive-topbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 28px;
+  background: var(--surface-vellum-card, #ffffff);
+  border-bottom: 1px solid var(--border-vellum-subtle, #d4d4d4);
+}
+
+.m2-archive-heading-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.m2-archive-eyebrow {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-on-light-muted, #595959);
+}
+
+.m2-archive-title {
+  margin: 0;
+  font-family: var(--m2-font-serif);
+  font-size: 21px;
+  font-weight: 500;
+  color: var(--text-on-light-primary, #121212);
+}
+
+.m2-archive-close-btn {
+  appearance: none;
+  background: var(--bg-vellum-paper, #f2f2f2);
+  color: var(--text-on-light-primary, #121212);
+  border: 1px solid var(--border-vellum-interactive, #737373);
+  border-radius: 2px;
+  padding: 8px 14px;
+  min-height: 38px;
+  font-family: var(--m2-font-sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.m2-archive-close-btn:hover {
+  background: var(--surface-vellum-inset, #e6e6e6);
+}
+
+.m2-archive-close-btn:focus-visible {
+  outline: 2px solid var(--focus-ring-on-light, #121212);
+  outline-offset: 2px;
+}
+
+/* Room & Medium Filter Bar */
+.m2-archive-controls {
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 28px;
+  background: var(--bg-vellum-paper, #f2f2f2);
+  border-bottom: 1px solid var(--border-vellum-subtle, #d4d4d4);
+}
+
+.m2-archive-rooms-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.m2-room-tab {
+  appearance: none;
+  background: var(--surface-vellum-card, #ffffff);
+  color: var(--text-on-light-secondary, #383838);
+  border: 1px solid var(--border-vellum-subtle, #d4d4d4);
+  border-radius: 2px;
+  padding: 6px 11px;
+  min-height: 34px;
+  font-family: var(--m2-font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 140ms ease, color 140ms ease, border-color 140ms ease;
+}
+
+.m2-room-tab:hover {
+  background: var(--surface-vellum-inset, #e6e6e6);
+  border-color: var(--border-vellum-interactive, #737373);
+}
+
+.m2-room-tab.is-active {
+  background: var(--accent-on-light-iron, #141414);
+  color: var(--surface-vellum-card, #ffffff);
+  border-color: var(--accent-on-light-iron, #141414);
+}
+
+.m2-room-tab:focus-visible {
+  outline: 2px solid var(--focus-ring-on-light, #121212);
+  outline-offset: 2px;
+}
+
+.m2-room-tab-count {
+  font-family: var(--m2-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+.m2-archive-medium-filter {
+  display: inline-flex;
+  border: 1px solid var(--border-vellum-subtle, #d4d4d4);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.m2-medium-btn {
+  appearance: none;
+  background: var(--surface-vellum-card, #ffffff);
+  color: var(--text-on-light-secondary, #383838);
+  border: 0;
+  border-right: 1px solid var(--border-vellum-subtle, #d4d4d4);
+  padding: 6px 10px;
+  font-family: var(--m2-font-sans);
+  font-size: 11.5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.m2-medium-btn:last-child {
+  border-right: 0;
+}
+
+.m2-medium-btn.is-active {
+  background: var(--surface-vellum-inset, #e6e6e6);
+  color: var(--text-on-light-primary, #121212);
+  font-weight: 600;
+}
+
+/* Scrollable Light-Table Grid Area */
+.m2-archive-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 22px 28px 44px;
+}
+
+.m2-room-intro {
+  max-width: 820px;
+  margin-bottom: 20px;
+}
+
+.m2-room-intro-title {
+  margin: 0 0 5px;
+  font-family: var(--m2-font-serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-on-light-primary, #121212);
+}
+
+.m2-room-intro-desc {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text-on-light-secondary, #383838);
+}
+
+.m2-archive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(248px, 1fr));
+  gap: 18px;
+}
+
+.m2-archive-card {
+  appearance: none;
+  text-align: left;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 12px;
+  background: var(--surface-vellum-card, #ffffff);
+  color: var(--text-on-light-primary, #121212);
+  border: 1px solid var(--border-vellum-subtle, #d4d4d4);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.m2-archive-card:hover {
+  border-color: var(--border-vellum-interactive, #737373);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
+  transform: translateY(-1px);
+}
+
+.m2-archive-card:focus-visible {
+  outline: 2px solid var(--focus-ring-on-light, #121212);
+  outline-offset: 2px;
+}
+
+.m2-card-well {
+  width: 100%;
+  height: 196px;
+  background: var(--surface-vellum-inset, #e6e6e6);
+  border: 1px solid var(--border-vellum-subtle, #d4d4d4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.m2-card-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: none !important;
+}
+
+.m2-card-meta-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  row-gap: 4px;
+  min-width: 0;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-on-light-muted, #595959);
+}
+
+.m2-card-era-pill {
+  padding: 2px 5px;
+  border-radius: 1px;
+  font-size: 10px;
+  font-weight: 600;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: var(--surface-vellum-inset, #e6e6e6);
+  color: var(--accent-on-light-sage, #474747);
+  border: 1px solid var(--border-vellum-subtle, #d4d4d4);
+}
+
+.m2-card-title {
+  margin: 0;
+  font-family: var(--m2-font-serif);
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1.32;
+  color: var(--text-on-light-primary, #121212);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.m2-card-footer {
+  margin-top: auto;
+  padding-top: 7px;
+  border-top: 1px solid var(--border-vellum-subtle, #d4d4d4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11.5px;
+  color: var(--text-on-light-muted, #595959);
+}
+
+.m2-card-walkthrough-flag {
+  font-family: var(--m2-font-mono);
+  font-size: 10.5px;
+  color: var(--text-on-light-primary, #121212);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   4. High-Resolution Museum Plate Lightbox (`m2-lightbox`)
+   ========================================================================== */
+
+.m2-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  pointer-events: auto;
+  background: var(--bg-museum-canvas, #121212);
+  color: var(--text-on-dark-primary, #f5f5f5);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  font-family: var(--m2-font-sans);
+}
+
+.m2-lightbox[hidden] {
+  display: none !important;
+}
+
+.m2-lightbox-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-museum-canvas, #121212);
+  overflow: hidden;
+}
+
+.m2-lightbox-toolbar {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  right: 18px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.m2-lightbox-toolgroup {
+  pointer-events: auto;
+  display: inline-flex;
+  background: var(--surface-plate-plinth, #1c1c1c);
+  border: 1px solid var(--border-plate-subtle, #383838);
+  border-radius: 2px;
+}
+
+.m2-lightbox-toolbtn {
+  appearance: none;
+  background: transparent;
+  color: var(--text-on-dark-secondary, #d4d4d4);
+  border: 0;
+  border-right: 1px solid var(--border-plate-subtle, #383838);
+  padding: 7px 11px;
+  min-height: 34px;
+  font-family: var(--m2-font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.m2-lightbox-toolbtn:last-child {
+  border-right: 0;
+}
+
+.m2-lightbox-toolbtn:hover {
+  background: var(--surface-plate-elevated, #292929);
+  color: var(--text-on-dark-primary, #f5f5f5);
+}
+
+.m2-lightbox-toolbtn:focus-visible {
+  outline: 2px solid var(--focus-ring-on-dark, #ffffff);
+  outline-offset: -2px;
+}
+
+.m2-lightbox-viewport {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 62px 28px 28px;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+}
+
+.m2-lightbox-viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.m2-lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transform-origin: center center;
+  filter: none !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65);
+  transition: transform 90ms ease-out;
+}
+
+.m2-lightbox-viewport.is-dragging .m2-lightbox-img {
+  transition: none;
+}
+
+.m2-lightbox-sidebar {
+  background: var(--surface-plate-plinth, #1c1c1c);
+  border-left: 1px solid var(--border-plate-subtle, #383838);
+  padding: 22px 22px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.m2-lightbox-cat {
+  font-family: var(--m2-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-on-dark-muted, #a3a3a3);
+}
+
+.m2-lightbox-title {
+  margin: 0;
+  font-family: var(--m2-font-serif);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--text-on-dark-primary, #f5f5f5);
+}
+
+.m2-lightbox-dl {
+  margin: 4px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-plate-subtle, #383838);
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  row-gap: 8px;
+  column-gap: 10px;
+  font-size: 12.2px;
+}
+
+.m2-lightbox-dl dt {
+  color: var(--text-on-dark-muted, #a3a3a3);
+  font-weight: 500;
+}
+
+.m2-lightbox-dl dd {
+  margin: 0;
+  color: var(--text-on-dark-secondary, #d4d4d4);
+  line-height: 1.4;
+}
+
+.m2-lightbox-note {
+  margin: 4px 0 0;
+  padding: 10px 12px;
+  background: var(--surface-plate-elevated, #292929);
+  border-left: 2px solid var(--border-plate-interactive, #737373);
+  font-size: 12.2px;
+  line-height: 1.48;
+  color: var(--text-on-dark-secondary, #d4d4d4);
+}
+
+.m2-lightbox-actions {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-plate-subtle, #383838);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.m2-lightbox-primary-btn {
+  appearance: none;
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--accent-on-dark-vellum, #ffffff);
+  color: var(--bg-museum-canvas, #121212);
+  border: 1px solid var(--accent-on-dark-vellum, #ffffff);
+  border-radius: 2px;
+  font-family: var(--m2-font-sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+
+.m2-lightbox-primary-btn:hover {
+  background: #e6e6e6;
+  border-color: #e6e6e6;
+}
+
+/* ==========================================================================
+   5. Responsive Mobile & Tablet Layout (`<= 860px`)
+   ========================================================================== */
+
+@media (max-width: 860px) {
+  .m2-exhibition-header {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .m2-brand-mark {
+    padding: 5px 9px;
+  }
+
+  .m2-brand-title {
+    font-size: 11px;
+    letter-spacing: 0.05em;
+  }
+
+  .m2-brand-subtitle {
+    display: none;
+  }
+
+  .m2-header-btn {
+    padding: 6px 9px;
+    font-size: 11px;
+    min-height: 32px;
+    gap: 5px;
+  }
+
+  .m2-placard {
+    left: 12px !important;
+    right: 12px !important;
+    top: auto !important;
+    bottom: 94px !important;
+    width: auto !important;
+    max-height: 56vh;
+    max-height: min(56vh, calc(100dvh - 156px));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 12px 11px;
+  }
+
+  .m2-placard.is-collapsed {
+    max-height: none;
+    overflow-y: visible;
+    padding: 9px 12px 10px;
+  }
+
+  .m2-placard-eyebrow-row {
+    margin-bottom: 4px;
+  }
+
+  .m2-placard.is-collapsed .m2-placard-eyebrow-row {
+    margin-bottom: 2px;
+  }
+
+  .m2-placard-collapse-btn {
+    min-width: 32px;
+    min-height: 32px;
+    height: 32px;
+    padding: 0 10px;
+    font-size: 10.5px;
+    opacity: 1;
+  }
+
+  .m2-placard[data-theme="light_vellum"] .m2-placard-collapse-btn {
+    background: var(--surface-vellum-inset, #e6e6e6);
+    border-color: var(--border-vellum-subtle, #d4d4d4);
+    color: var(--text-on-light-primary, #121212);
+  }
+
+  .m2-placard[data-theme="dark_plinth"] .m2-placard-collapse-btn {
+    background: var(--surface-plate-elevated, #292929);
+    border-color: var(--border-plate-subtle, #383838);
+    color: var(--text-on-dark-primary, #f5f5f5);
+  }
+
+  .m2-placard-headline {
+    font-size: 14.5px;
+    margin: 0 0 5px;
+  }
+
+  .m2-placard.is-collapsed .m2-placard-headline {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .m2-placard-narrative {
+    display: block;
+    font-size: 12px;
+    line-height: 1.42;
+    margin: 0 0 6px;
+    overflow: visible;
+  }
+
+  .m2-placard-elevation {
+    display: block;
+    font-size: 11px;
+    line-height: 1.36;
+    padding-top: 6px;
+  }
+
+  .m2-hero-presets {
+    margin-top: 6px;
+    padding-top: 6px;
+    gap: 4px;
+  }
+
+  .m2-hero-preset-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+
+  .m2-hero-preset-btn {
+    width: auto;
+    flex: 1 1 auto;
+    min-height: 26px;
+    padding: 4px 8px;
+    font-size: 10.8px;
+    gap: 5px;
+  }
+
+  .m2-hero-preset-caption {
+    display: block;
+    margin: 2px 0 0;
+    font-size: 11px;
+    line-height: 1.36;
+  }
+
+  .m2-archive-card {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .m2-card-meta-top {
+    font-size: 9.5px;
+  }
+
+  .m2-card-era-pill {
+    font-size: 9px;
+  }
+
+  .m2-archive-topbar,
+  .m2-archive-controls,
+  .m2-archive-scroll {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .m2-archive-grid {
+    grid-template-columns: repeat(auto-fill, minmax(164px, 1fr));
+    gap: 12px;
+  }
+
+  .m2-card-well {
+    height: 148px;
+  }
+
+  .m2-lightbox {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+
+  .m2-lightbox-sidebar {
+    max-height: 44vh;
+    border-left: 0;
+    border-top: 1px solid var(--border-plate-subtle, #383838);
+    padding: 16px;
+  }
+}

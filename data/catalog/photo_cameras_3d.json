@@ -1,0 +1,2253 @@
+{
+  "schema_version": "1.0",
+  "catalog_id": "photo_cameras_3d",
+  "title": "Solved 3D Pinhole + Rising-Front View-Offset Cameras for All 11 Public-Domain Archival Photos",
+  "units": "meters",
+  "threejs_application_recipe": "cam.position.set(...position_xyz_m); cam.quaternion.set(...quaternion_xyzw); cam.fov = fov_y_deg; cam.aspect = fullWidth / fullHeight; if (view_offset.enabled) cam.setViewOffset(fullWidth, fullHeight, offsetX, offsetY, width, height); else cam.clearViewOffset(); cam.updateProjectionMatrix();",
+  "total_cameras": 11,
+  "cameras": [
+    {
+      "photo_id": "18",
+      "path": "references/photos/non_construction/completed_tower_views/18_Neurdein_1889_05_Completed_Tower_MoPA_Commons_PD.jpg",
+      "recommended_global_step": 11,
+      "image_size_px": [
+        2925.741,
+        3987.47
+      ],
+      "position_xyz_m": [
+        -3.3263,
+        0.8,
+        539.9811
+      ],
+      "quaternion_xyzw": [
+        0.1463351,
+        -0.0034924,
+        0.0002574,
+        0.9892289
+      ],
+      "fov_y_deg": 32.07993,
+      "view_offset": {
+        "enabled": true,
+        "fullWidth": 2925.741,
+        "fullHeight": 3987.47,
+        "offsetX": -88.7722,
+        "offsetY": 363.555,
+        "width": 2925.741,
+        "height": 3987.47
+      },
+      "reprojection_rmse_px": 2.85,
+      "landmarks_reprojection": [
+        {
+          "world_xyz_m": [
+            0.05,
+            312.12,
+            -0.05
+          ],
+          "observed_px": [
+            1548.96,
+            17.17
+          ],
+          "projected_px": [
+            1545.29,
+            12.19
+          ]
+        },
+        {
+          "world_xyz_m": [
+            0,
+            300.607,
+            0.05
+          ],
+          "observed_px": [
+            1544.76,
+            126.36
+          ],
+          "projected_px": [
+            1544.76,
+            129.27
+          ]
+        },
+        {
+          "world_xyz_m": [
+            0.006,
+            291.152,
+            2.251
+          ],
+          "observed_px": [
+            1545.16,
+            214.5
+          ],
+          "projected_px": [
+            1545.01,
+            214.56
+          ]
+        },
+        {
+          "world_xyz_m": [
+            0.007,
+            285.669,
+            1.563
+          ],
+          "observed_px": [
+            1545.16,
+            271.87
+          ],
+          "projected_px": [
+            1544.99,
+            275.55
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -8.635,
+            277.939,
+            8.948
+          ],
+          "observed_px": [
+            1444.08,
+            315.54
+          ],
+          "projected_px": [
+            1443.7,
+            315.83
+          ]
+        },
+        {
+          "world_xyz_m": [
+            8.55,
+            277.939,
+            8.948
+          ],
+          "observed_px": [
+            1643.42,
+            315.54
+          ],
+          "projected_px": [
+            1646.18,
+            316.4
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -5.894,
+            267.902,
+            5.553
+          ],
+          "observed_px": [
+            1471.85,
+            441.55
+          ],
+          "projected_px": [
+            1475.83,
+            441.41
+          ]
+        },
+        {
+          "world_xyz_m": [
+            5.823,
+            267.902,
+            5.553
+          ],
+          "observed_px": [
+            1615.81,
+            441.55
+          ],
+          "projected_px": [
+            1613.8,
+            441.78
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -8.616,
+            200.918,
+            8.483
+          ],
+          "observed_px": [
+            1438.46,
+            1171.81
+          ],
+          "projected_px": [
+            1440.21,
+            1169.05
+          ]
+        },
+        {
+          "world_xyz_m": [
+            8.594,
+            200.918,
+            8.483
+          ],
+          "observed_px": [
+            1651.97,
+            1171.81
+          ],
+          "projected_px": [
+            1650.81,
+            1169.47
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -18.832,
+            118.788,
+            18.864
+          ],
+          "observed_px": [
+            1301.39,
+            2121.45
+          ],
+          "projected_px": [
+            1301.68,
+            2123.61
+          ]
+        },
+        {
+          "world_xyz_m": [
+            18.852,
+            118.788,
+            18.864
+          ],
+          "observed_px": [
+            1792.78,
+            2121.45
+          ],
+          "projected_px": [
+            1792,
+            2124.12
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -17.948,
+            105.184,
+            18.073
+          ],
+          "observed_px": [
+            1315.53,
+            2301.38
+          ],
+          "projected_px": [
+            1311.78,
+            2300.06
+          ]
+        },
+        {
+          "world_xyz_m": [
+            17.969,
+            105.184,
+            18.073
+          ],
+          "observed_px": [
+            1778.66,
+            2301.38
+          ],
+          "projected_px": [
+            1781.91,
+            2300.47
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -7.936,
+            88.721,
+            22.409
+          ],
+          "observed_px": [
+            1444.3,
+            2503.36
+          ],
+          "projected_px": [
+            1441.53,
+            2504.75
+          ]
+        },
+        {
+          "world_xyz_m": [
+            8.016,
+            88.721,
+            22.409
+          ],
+          "observed_px": [
+            1653.06,
+            2503.36
+          ],
+          "projected_px": [
+            1653.9,
+            2504.9
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -36.23,
+            56.358,
+            35.355
+          ],
+          "observed_px": [
+            1045.31,
+            2921.17
+          ],
+          "projected_px": [
+            1044.86,
+            2921.15
+          ]
+        },
+        {
+          "world_xyz_m": [
+            36.317,
+            56.358,
+            35.355
+          ],
+          "observed_px": [
+            2054.39,
+            2921.17
+          ],
+          "projected_px": [
+            2052.82,
+            2921.41
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -37.793,
+            45.244,
+            38.259
+          ],
+          "observed_px": [
+            1018.36,
+            3074.87
+          ],
+          "projected_px": [
+            1017.06,
+            3074.71
+          ]
+        },
+        {
+          "world_xyz_m": [
+            36.772,
+            45.244,
+            38.259
+          ],
+          "observed_px": [
+            2063.87,
+            3074.87
+          ],
+          "projected_px": [
+            2065.67,
+            3074.82
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -0.211,
+            40.361,
+            39.276
+          ],
+          "observed_px": [
+            1541.11,
+            3144.56
+          ],
+          "projected_px": [
+            1545.95,
+            3143.68
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -0.035,
+            37.759,
+            -40.736
+          ],
+          "observed_px": [
+            1541.11,
+            3257.48
+          ],
+          "projected_px": [
+            1542.04,
+            3255.13
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -40.567,
+            38.965,
+            40.653
+          ],
+          "observed_px": [
+            975.43,
+            3161.05
+          ],
+          "projected_px": [
+            973.46,
+            3162.29
+          ]
+        },
+        {
+          "world_xyz_m": [
+            40.612,
+            38.965,
+            40.653
+          ],
+          "observed_px": [
+            2123.71,
+            3161.05
+          ],
+          "projected_px": [
+            2124.66,
+            3162.32
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -45.358,
+            27.879,
+            45.35
+          ],
+          "observed_px": [
+            895.47,
+            3322.18
+          ],
+          "projected_px": [
+            895.64,
+            3320.22
+          ]
+        },
+        {
+          "world_xyz_m": [
+            46.143,
+            27.739,
+            46.08
+          ],
+          "observed_px": [
+            2216.49,
+            3322.18
+          ],
+          "projected_px": [
+            2215.07,
+            3321.52
+          ]
+        }
+      ]
+    },
+    {
+      "photo_id": "36",
+      "path": "references/photos/non_construction/completed_tower_views/36_LOC_1889_Central_Dome_Through_Base_Arch_LCCN92519644_PD.jpg",
+      "recommended_global_step": 11,
+      "image_size_px": [
+        1600,
+        1256
+      ],
+      "position_xyz_m": [
+        0.5518,
+        2.8,
+        -63.7114
+      ],
+      "quaternion_xyzw": [
+        -0.0041034,
+        0.9986933,
+        -0.0019274,
+        -0.0509027
+      ],
+      "fov_y_deg": 41.24108,
+      "view_offset": {
+        "enabled": true,
+        "fullWidth": 1600,
+        "fullHeight": 1256,
+        "offsetX": 158.31,
+        "offsetY": -192.545,
+        "width": 1600,
+        "height": 1256
+      },
+      "reprojection_rmse_px": 3.683,
+      "landmarks_reprojection": [
+        {
+          "world_xyz_m": [
+            0,
+            39.21,
+            38.685
+          ],
+          "observed_px": [
+            816.34,
+            230.29
+          ],
+          "projected_px": [
+            816.34,
+            230.29
+          ]
+        },
+        {
+          "world_xyz_m": [
+            0,
+            39.21,
+            29.749
+          ],
+          "observed_px": [
+            816.72,
+            173.36
+          ],
+          "projected_px": [
+            816.72,
+            173.36
+          ]
+        },
+        {
+          "world_xyz_m": [
+            0,
+            43.33,
+            38.288
+          ],
+          "observed_px": [
+            815.78,
+            160.39
+          ],
+          "projected_px": [
+            815.78,
+            160.39
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -26,
+            29.55,
+            39.61
+          ],
+          "observed_px": [
+            1253.07,
+            377.21
+          ],
+          "projected_px": [
+            1253.07,
+            377.21
+          ]
+        },
+        {
+          "world_xyz_m": [
+            26,
+            29.55,
+            39.61
+          ],
+          "observed_px": [
+            404,
+            406.33
+          ],
+          "projected_px": [
+            404,
+            406.33
+          ]
+        }
+      ]
+    },
+    {
+      "photo_id": "23",
+      "path": "references/photos/construction/first_and_second_platforms/23_Durandelle_1888_01_07_Timber_Falsework_Getty_106P1A_CC0.jpg",
+      "recommended_global_step": 3.6,
+      "image_size_px": [
+        3669,
+        2307.433
+      ],
+      "position_xyz_m": [
+        19.6142,
+        4.4408,
+        405.8668
+      ],
+      "quaternion_xyzw": [
+        -0.0470153,
+        0.0114059,
+        0.0015337,
+        0.9988279
+      ],
+      "fov_y_deg": 11.26925,
+      "view_offset": {
+        "enabled": true,
+        "fullWidth": 3669,
+        "fullHeight": 2307.433,
+        "offsetX": -326.36,
+        "offsetY": -2239.7878,
+        "width": 3669,
+        "height": 2307.433
+      },
+      "reprojection_rmse_px": 1.14,
+      "landmarks_reprojection": [
+        {
+          "world_xyz_m": [
+            -0.414,
+            56.64,
+            31.789
+          ],
+          "observed_px": [
+            1800,
+            623.44
+          ],
+          "projected_px": [
+            1800.34,
+            622.56
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -37.47,
+            50.839,
+            34.658
+          ],
+          "observed_px": [
+            613.89,
+            798.44
+          ],
+          "projected_px": [
+            614.1,
+            799.46
+          ]
+        },
+        {
+          "world_xyz_m": [
+            37.57,
+            50.839,
+            34.658
+          ],
+          "observed_px": [
+            3013.53,
+            798.44
+          ],
+          "projected_px": [
+            3012.31,
+            797.33
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -41.838,
+            37.414,
+            41.713
+          ],
+          "observed_px": [
+            440.75,
+            1212.94
+          ],
+          "projected_px": [
+            442.16,
+            1212.89
+          ]
+        },
+        {
+          "world_xyz_m": [
+            41.586,
+            37.414,
+            41.713
+          ],
+          "observed_px": [
+            3149.74,
+            1212.94
+          ],
+          "projected_px": [
+            3150.88,
+            1212.65
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -46.423,
+            27.225,
+            46.49
+          ],
+          "observed_px": [
+            270.75,
+            1537.22
+          ],
+          "projected_px": [
+            270.01,
+            1536.62
+          ]
+        },
+        {
+          "world_xyz_m": [
+            46.521,
+            27.225,
+            46.49
+          ],
+          "observed_px": [
+            3320.27,
+            1537.22
+          ],
+          "projected_px": [
+            3320.05,
+            1538.28
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -7.321,
+            29.942,
+            29.98
+          ],
+          "observed_px": [
+            1588.46,
+            1483.94
+          ],
+          "projected_px": [
+            1587.43,
+            1484.33
+          ]
+        },
+        {
+          "world_xyz_m": [
+            7.669,
+            29.942,
+            29.98
+          ],
+          "observed_px": [
+            2057.88,
+            1483.94
+          ],
+          "projected_px": [
+            2057.99,
+            1484.54
+          ]
+        }
+      ]
+    },
+    {
+      "photo_id": "14",
+      "path": "references/photos/construction/first_and_second_platforms/14_Durandelle_1888_06_12_Second_Stage_Getty_106P1P_CC0.jpg",
+      "recommended_global_step": 4.85,
+      "image_size_px": [
+        2721,
+        2205.108
+      ],
+      "position_xyz_m": [
+        4.0028,
+        9.9426,
+        363.2111
+      ],
+      "quaternion_xyzw": [
+        -0.0468198,
+        0.0078928,
+        0.0011598,
+        0.9988715
+      ],
+      "fov_y_deg": 18.63744,
+      "view_offset": {
+        "enabled": true,
+        "fullWidth": 2721,
+        "fullHeight": 2205.108,
+        "offsetX": 1.46,
+        "offsetY": -1277.5318,
+        "width": 2721,
+        "height": 2205.108
+      },
+      "reprojection_rmse_px": 1.91,
+      "landmarks_reprojection": [
+        {
+          "world_xyz_m": [
+            -31.585,
+            57.174,
+            31.453
+          ],
+          "observed_px": [
+            734.39,
+            770.76
+          ],
+          "projected_px": [
+            736.5,
+            771.18
+          ]
+        },
+        {
+          "world_xyz_m": [
+            29.611,
+            57.174,
+            31.453
+          ],
+          "observed_px": [
+            1995.79,
+            770.76
+          ],
+          "projected_px": [
+            1997.97,
+            770.3
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -38.524,
+            44.304,
+            38.489
+          ],
+          "observed_px": [
+            576.64,
+            1024.53
+          ],
+          "projected_px": [
+            577.33,
+            1024.42
+          ]
+        },
+        {
+          "world_xyz_m": [
+            38.532,
+            44.304,
+            38.489
+          ],
+          "observed_px": [
+            2195.46,
+            1024.53
+          ],
+          "projected_px": [
+            2194.65,
+            1024.25
+          ]
+        },
+        {
+          "world_xyz_m": [
+            0.054,
+            41.633,
+            39.283
+          ],
+          "observed_px": [
+            1386.05,
+            1079.02
+          ],
+          "projected_px": [
+            1385.21,
+            1079.52
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -43.092,
+            33.735,
+            43.285
+          ],
+          "observed_px": [
+            472.59,
+            1241.26
+          ],
+          "projected_px": [
+            469.39,
+            1240.79
+          ]
+        },
+        {
+          "world_xyz_m": [
+            43.438,
+            33.735,
+            43.285
+          ],
+          "observed_px": [
+            2309.42,
+            1241.26
+          ],
+          "projected_px": [
+            2307.33,
+            1241.53
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -48.524,
+            22.384,
+            48.405
+          ],
+          "observed_px": [
+            337.57,
+            1479.87
+          ],
+          "projected_px": [
+            339.46,
+            1478.9
+          ]
+        },
+        {
+          "world_xyz_m": [
+            48.285,
+            22.384,
+            48.405
+          ],
+          "observed_px": [
+            2420.52,
+            1479.87
+          ],
+          "projected_px": [
+            2422.23,
+            1480.89
+          ]
+        }
+      ]
+    },
+    {
+      "photo_id": "01",
+      "path": "references/photos/construction/upper_stages_and_topping_out/01_Durandelle_1888_08_21_Second_Platform_Complete_BnF_Gallica_PD.jpg",
+      "recommended_global_step": 5.66,
+      "image_size_px": [
+        2533.054,
+        3401.905
+      ],
+      "position_xyz_m": [
+        -1.2296,
+        6.9639,
+        256.962
+      ],
+      "quaternion_xyzw": [
+        0.1029039,
+        0.0036629,
+        -0.000585,
+        0.9946844
+      ],
+      "fov_y_deg": 39.10553,
+      "view_offset": {
+        "enabled": true,
+        "fullWidth": 2533.054,
+        "fullHeight": 3401.905,
+        "offsetX": 86.4594,
+        "offsetY": -270.81,
+        "width": 2533.054,
+        "height": 3401.905
+      },
+      "reprojection_rmse_px": 2.53,
+      "landmarks_reprojection": [
+        {
+          "world_xyz_m": [
+            -16.322,
+            137.526,
+            14.284
+          ],
+          "observed_px": [
+            936.06,
+            556.14
+          ],
+          "projected_px": [
+            938.26,
+            557.08
+          ]
+        },
+        {
+          "world_xyz_m": [
+            16.048,
+            137.526,
+            14.284
+          ],
+          "observed_px": [
+            1522.25,
+            556.14
+          ],
+          "projected_px": [
+            1524.96,
+            554.72
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -20.7,
+            117.325,
+            19.425
+          ],
+          "observed_px": [
+            844.32,
+            856.29
+          ],
+          "projected_px": [
+            846.89,
+            857.89
+          ]
+        },
+        {
+          "world_xyz_m": [
+            20.401,
+            117.325,
+            19.425
+          ],
+          "observed_px": [
+            1616.06,
+            856.29
+          ],
+          "projected_px": [
+            1618.62,
+            855.12
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -17.788,
+            105.702,
+            18.102
+          ],
+          "observed_px": [
+            903.39,
+            1071.33
+          ],
+          "projected_px": [
+            900.6,
+            1072.45
+          ]
+        },
+        {
+          "world_xyz_m": [
+            18.107,
+            105.702,
+            18.102
+          ],
+          "observed_px": [
+            1580.18,
+            1071.33
+          ],
+          "projected_px": [
+            1577.46,
+            1070.24
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -7.511,
+            107.083,
+            -17.105
+          ],
+          "observed_px": [
+            1107.7,
+            1277.01
+          ],
+          "projected_px": [
+            1108.89,
+            1277.19
+          ]
+        },
+        {
+          "world_xyz_m": [
+            7.447,
+            107.083,
+            -17.105
+          ],
+          "observed_px": [
+            1356.97,
+            1277.01
+          ],
+          "projected_px": [
+            1357.01,
+            1276.46
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -36.419,
+            56.946,
+            35.805
+          ],
+          "observed_px": [
+            470.59,
+            1894.22
+          ],
+          "projected_px": [
+            471.63,
+            1896.15
+          ]
+        },
+        {
+          "world_xyz_m": [
+            36.256,
+            56.946,
+            35.805
+          ],
+          "observed_px": [
+            2005.7,
+            1894.22
+          ],
+          "projected_px": [
+            2007.14,
+            1893.02
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -38.001,
+            45.447,
+            37.944
+          ],
+          "observed_px": [
+            422.47,
+            2127.64
+          ],
+          "projected_px": [
+            423.22,
+            2127.54
+          ]
+        },
+        {
+          "world_xyz_m": [
+            38.07,
+            45.447,
+            37.944
+          ],
+          "observed_px": [
+            2064.48,
+            2127.64
+          ],
+          "projected_px": [
+            2062.66,
+            2124.77
+          ]
+        },
+        {
+          "world_xyz_m": [
+            0.049,
+            40.385,
+            39.301
+          ],
+          "observed_px": [
+            1243.47,
+            2227.64
+          ],
+          "projected_px": [
+            1242.74,
+            2229.69
+          ]
+        },
+        {
+          "world_xyz_m": [
+            0.23,
+            37.868,
+            -40.727
+          ],
+          "observed_px": [
+            1243.47,
+            2465.07
+          ],
+          "projected_px": [
+            1238.82,
+            2465.46
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -42.242,
+            36.42,
+            42.238
+          ],
+          "observed_px": [
+            307.11,
+            2306.55
+          ],
+          "projected_px": [
+            307.73,
+            2308.07
+          ]
+        },
+        {
+          "world_xyz_m": [
+            42.333,
+            36.42,
+            42.238
+          ],
+          "observed_px": [
+            2183.41,
+            2306.55
+          ],
+          "projected_px": [
+            2181.46,
+            2305.42
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -46.61,
+            26.198,
+            46.697
+          ],
+          "observed_px": [
+            182.81,
+            2524.77
+          ],
+          "projected_px": [
+            180.81,
+            2525.85
+          ]
+        },
+        {
+          "world_xyz_m": [
+            46.651,
+            26.198,
+            46.697
+          ],
+          "observed_px": [
+            2309.18,
+            2524.77
+          ],
+          "projected_px": [
+            2310.59,
+            2523.53
+          ]
+        }
+      ]
+    },
+    {
+      "photo_id": "46",
+      "path": "references/photos/construction/upper_stages_and_topping_out/46_Durandelle_1888_12_26_Upper_Shaft_NGA_Commons_PD.jpg",
+      "recommended_global_step": 6.52,
+      "image_size_px": [
+        2524.054,
+        3048.067
+      ],
+      "position_xyz_m": [
+        0.0267,
+        4.4632,
+        265.1589
+      ],
+      "quaternion_xyzw": [
+        0.208793,
+        0.0013738,
+        -0.0002732,
+        0.9779589
+      ],
+      "fov_y_deg": 44.62086,
+      "view_offset": {
+        "enabled": true,
+        "fullWidth": 2524.054,
+        "fullHeight": 3048.067,
+        "offsetX": 7.7231,
+        "offsetY": 198.0068,
+        "width": 2524.054,
+        "height": 3048.067
+      },
+      "reprojection_rmse_px": 2.85,
+      "landmarks_reprojection": [
+        {
+          "world_xyz_m": [
+            -19.85,
+            120.6,
+            19.85
+          ],
+          "observed_px": [
+            990.02,
+            1246.64
+          ],
+          "projected_px": [
+            991.75,
+            1246.53
+          ]
+        },
+        {
+          "world_xyz_m": [
+            19.85,
+            120.6,
+            19.85
+          ],
+          "observed_px": [
+            1538.3,
+            1246.64
+          ],
+          "projected_px": [
+            1535.14,
+            1245.9
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -16.85,
+            102.85,
+            19.8
+          ],
+          "observed_px": [
+            1024.22,
+            1472.51
+          ],
+          "projected_px": [
+            1026.75,
+            1472.38
+          ]
+        },
+        {
+          "world_xyz_m": [
+            16.85,
+            102.85,
+            19.8
+          ],
+          "observed_px": [
+            1497.26,
+            1472.51
+          ],
+          "projected_px": [
+            1500.6,
+            1471.9
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -7.45,
+            106.25,
+            -17.1
+          ],
+          "observed_px": [
+            1169.78,
+            1604.24
+          ],
+          "projected_px": [
+            1171.36,
+            1603.63
+          ]
+        },
+        {
+          "world_xyz_m": [
+            7.45,
+            106.25,
+            -17.1
+          ],
+          "observed_px": [
+            1356.26,
+            1604.24
+          ],
+          "projected_px": [
+            1356.31,
+            1603.46
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -35.85,
+            57.45,
+            35.347
+          ],
+          "observed_px": [
+            690.35,
+            2053.17
+          ],
+          "projected_px": [
+            689.09,
+            2056.37
+          ]
+        },
+        {
+          "world_xyz_m": [
+            35.85,
+            57.45,
+            35.347
+          ],
+          "observed_px": [
+            1844.03,
+            2053.17
+          ],
+          "projected_px": [
+            1839.84,
+            2055.68
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -37.95,
+            45.55,
+            37.95
+          ],
+          "observed_px": [
+            638.41,
+            2242.22
+          ],
+          "projected_px": [
+            635.96,
+            2242.24
+          ]
+        },
+        {
+          "world_xyz_m": [
+            37.95,
+            45.55,
+            37.95
+          ],
+          "observed_px": [
+            1894.97,
+            2242.22
+          ],
+          "projected_px": [
+            1893.44,
+            2241.64
+          ]
+        },
+        {
+          "world_xyz_m": [
+            0,
+            39.95,
+            39.28
+          ],
+          "observed_px": [
+            1266.69,
+            2330.18
+          ],
+          "projected_px": [
+            1264.52,
+            2333.36
+          ]
+        },
+        {
+          "world_xyz_m": [
+            0,
+            37.85,
+            -40.73
+          ],
+          "observed_px": [
+            1266.69,
+            2523.17
+          ],
+          "projected_px": [
+            1264.84,
+            2523.8
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -42.2,
+            36.4,
+            42.2
+          ],
+          "observed_px": [
+            539.99,
+            2390.1
+          ],
+          "projected_px": [
+            541.19,
+            2387.89
+          ]
+        },
+        {
+          "world_xyz_m": [
+            42.2,
+            36.4,
+            42.2
+          ],
+          "observed_px": [
+            1987.72,
+            2390.1
+          ],
+          "projected_px": [
+            1988.67,
+            2387.36
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -47.35,
+            25.5,
+            47.35
+          ],
+          "observed_px": [
+            415.94,
+            2575.52
+          ],
+          "projected_px": [
+            417.36,
+            2575.18
+          ]
+        },
+        {
+          "world_xyz_m": [
+            47.35,
+            25.5,
+            47.35
+          ],
+          "observed_px": [
+            2109.36,
+            2575.52
+          ],
+          "projected_px": [
+            2113.15,
+            2574.77
+          ]
+        }
+      ]
+    },
+    {
+      "photo_id": "38",
+      "path": "references/photos/non_construction/exposition_grounds_and_pavilions/38_Rijksmuseum_1889_Fontaine_Saint_Vidal_RP_F_F16649_CC0.jpg",
+      "recommended_global_step": 11,
+      "image_size_px": [
+        1600,
+        1204
+      ],
+      "position_xyz_m": [
+        -1.5613,
+        2.8,
+        -28.4935
+      ],
+      "quaternion_xyzw": [
+        0.0041009,
+        0.9997462,
+        0.0046419,
+        -0.0216608
+      ],
+      "fov_y_deg": 50.78535,
+      "view_offset": {
+        "enabled": true,
+        "fullWidth": 1600,
+        "fullHeight": 1204,
+        "offsetX": -71.793,
+        "offsetY": -175.96,
+        "width": 1600,
+        "height": 1204
+      },
+      "reprojection_rmse_px": 5.209,
+      "landmarks_reprojection": [
+        {
+          "world_xyz_m": [
+            0,
+            39.21,
+            38.685
+          ],
+          "observed_px": [
+            902.98,
+            75.27
+          ],
+          "projected_px": [
+            902.98,
+            75.27
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -26,
+            29.55,
+            39.61
+          ],
+          "observed_px": [
+            1396.01,
+            261.69
+          ],
+          "projected_px": [
+            1396.01,
+            261.69
+          ]
+        },
+        {
+          "world_xyz_m": [
+            26,
+            29.55,
+            39.61
+          ],
+          "observed_px": [
+            423.75,
+            270.5
+          ],
+          "projected_px": [
+            423.75,
+            270.5
+          ]
+        }
+      ]
+    },
+    {
+      "photo_id": "09",
+      "path": "references/photos/construction/foundations_and_pillars/09_Durandelle_1887_07_18_Base_Shoes_Getty_106P1T_CC0.jpg",
+      "recommended_global_step": 1.5,
+      "image_size_px": [
+        5390,
+        3882.201
+      ],
+      "position_xyz_m": [
+        -64.8924,
+        3.3511,
+        33.2911
+      ],
+      "quaternion_xyzw": [
+        0.0431081,
+        -0.9456443,
+        0.0995327,
+        0.3065809
+      ],
+      "fov_y_deg": 52.81052,
+      "view_offset": {
+        "enabled": true,
+        "fullWidth": 5390,
+        "fullHeight": 3882.201,
+        "offsetX": -388.11,
+        "offsetY": 478.1492,
+        "width": 5390,
+        "height": 3882.201
+      },
+      "reprojection_rmse_px": 0.22,
+      "landmarks_reprojection": [
+        {
+          "world_xyz_m": [
+            -46.801,
+            13.567,
+            46.793
+          ],
+          "observed_px": [
+            1923.5,
+            585.62
+          ],
+          "projected_px": [
+            1923.62,
+            585.65
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -57.33,
+            7.214,
+            42.328
+          ],
+          "observed_px": [
+            2805.4,
+            1071.66
+          ],
+          "projected_px": [
+            2805.37,
+            1071.76
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -56.879,
+            6.631,
+            41.859
+          ],
+          "observed_px": [
+            2596.27,
+            1244.68
+          ],
+          "projected_px": [
+            2596.27,
+            1244.65
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -58.832,
+            2.121,
+            43.919
+          ],
+          "observed_px": [
+            3547.63,
+            2736.51
+          ],
+          "projected_px": [
+            3547.57,
+            2736.61
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -59.98,
+            2.855,
+            44.95
+          ],
+          "observed_px": [
+            4033.05,
+            2469.03
+          ],
+          "projected_px": [
+            4032.87,
+            2468.9
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -60.631,
+            3.233,
+            45.54
+          ],
+          "observed_px": [
+            4298.3,
+            2335.94
+          ],
+          "projected_px": [
+            4298.4,
+            2335.96
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -41.886,
+            6.947,
+            41.967
+          ],
+          "observed_px": [
+            532.41,
+            1683.43
+          ],
+          "projected_px": [
+            532.04,
+            1683.43
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -44.441,
+            1.681,
+            44.124
+          ],
+          "observed_px": [
+            1094.84,
+            2700.26
+          ],
+          "projected_px": [
+            1095.15,
+            2700.07
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -57.42,
+            7.382,
+            57.408
+          ],
+          "observed_px": [
+            4384.6,
+            1629.51
+          ],
+          "projected_px": [
+            4384.37,
+            1629.34
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -59.436,
+            1.97,
+            59.098
+          ],
+          "observed_px": [
+            4898.35,
+            2521.86
+          ],
+          "projected_px": [
+            4898.46,
+            2522
+          ]
+        }
+      ]
+    },
+    {
+      "photo_id": "13",
+      "path": "references/photos/construction/foundations_and_pillars/13_Durandelle_1887_05_01_Foundation_Caissons_Getty_106P1J_CC0.jpg",
+      "recommended_global_step": 0.55,
+      "image_size_px": [
+        5441.597,
+        3341.968
+      ],
+      "position_xyz_m": [
+        -47.1426,
+        3.9513,
+        -30.2702
+      ],
+      "quaternion_xyzw": [
+        -0.040226,
+        0.1198457,
+        0.0293848,
+        0.9915419
+      ],
+      "fov_y_deg": 41.44314,
+      "view_offset": {
+        "enabled": true,
+        "fullWidth": 5441.597,
+        "fullHeight": 3341.968,
+        "offsetX": 431.4685,
+        "offsetY": -269.266,
+        "width": 5441.597,
+        "height": 3341.968
+      },
+      "reprojection_rmse_px": 1.24,
+      "landmarks_reprojection": [
+        {
+          "world_xyz_m": [
+            -43.553,
+            10.6,
+            -50.953
+          ],
+          "observed_px": [
+            4372.63,
+            70.7
+          ],
+          "projected_px": [
+            4371.57,
+            69.82
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -45.203,
+            1.25,
+            -45.904
+          ],
+          "observed_px": [
+            3918.93,
+            2439.77
+          ],
+          "projected_px": [
+            3918.98,
+            2438.64
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -42.912,
+            1.274,
+            -47.203
+          ],
+          "observed_px": [
+            4560.49,
+            2424.14
+          ],
+          "projected_px": [
+            4560.52,
+            2426.32
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -51.677,
+            2.337,
+            -52.353
+          ],
+          "observed_px": [
+            2450.7,
+            1880.03
+          ],
+          "projected_px": [
+            2450.82,
+            1880.06
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -49.993,
+            2.271,
+            -53.303
+          ],
+          "observed_px": [
+            2801.81,
+            1902.26
+          ],
+          "projected_px": [
+            2802.11,
+            1902.64
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -55.768,
+            -1.135,
+            -45.154
+          ],
+          "observed_px": [
+            969.88,
+            2827.83
+          ],
+          "projected_px": [
+            971.06,
+            2828.1
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -58.945,
+            0.87,
+            -45.154
+          ],
+          "observed_px": [
+            260.13,
+            2240.25
+          ],
+          "projected_px": [
+            259.48,
+            2239.39
+          ]
+        }
+      ]
+    },
+    {
+      "photo_id": "51",
+      "path": "references/photos/construction/first_and_second_platforms/51_Durandelle_1888_01_14_Interior_Lattice_BnF_Gallica_PD.jpg",
+      "recommended_global_step": 3.55,
+      "image_size_px": [
+        5390.222,
+        3877.829
+      ],
+      "position_xyz_m": [
+        -26.9746,
+        49.6649,
+        27.1967
+      ],
+      "quaternion_xyzw": [
+        -0.0463295,
+        -0.3715932,
+        -0.0314903,
+        0.9267041
+      ],
+      "fov_y_deg": 28.20473,
+      "view_offset": {
+        "enabled": true,
+        "fullWidth": 5390.222,
+        "fullHeight": 3877.829,
+        "offsetX": -288.319,
+        "offsetY": 34.754,
+        "width": 5390.222,
+        "height": 3877.829
+      },
+      "reprojection_rmse_px": 1.9,
+      "landmarks_reprojection": [
+        {
+          "world_xyz_m": [
+            17.67,
+            57.63,
+            -17.83
+          ],
+          "observed_px": [
+            3093.45,
+            56.45
+          ],
+          "projected_px": [
+            3094.5,
+            57.39
+          ]
+        },
+        {
+          "world_xyz_m": [
+            17.57,
+            51.87,
+            -17.47
+          ],
+          "observed_px": [
+            3132.31,
+            778.25
+          ],
+          "projected_px": [
+            3132.85,
+            777.65
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -3.35,
+            50.65,
+            -17.75
+          ],
+          "observed_px": [
+            745.45,
+            949.5
+          ],
+          "projected_px": [
+            743.6,
+            951.48
+          ]
+        },
+        {
+          "world_xyz_m": [
+            17.75,
+            50.65,
+            -3.95
+          ],
+          "observed_px": [
+            4545.45,
+            874.91
+          ],
+          "projected_px": [
+            4545.03,
+            873.47
+          ]
+        },
+        {
+          "world_xyz_m": [
+            22.72,
+            42.56,
+            -22.58
+          ],
+          "observed_px": [
+            3160.95,
+            1832.16
+          ],
+          "projected_px": [
+            3159.81,
+            1832.03
+          ]
+        },
+        {
+          "world_xyz_m": [
+            23.45,
+            35.5,
+            -38.4
+          ],
+          "observed_px": [
+            2183.15,
+            2397.95
+          ],
+          "projected_px": [
+            2184.08,
+            2394.97
+          ]
+        },
+        {
+          "world_xyz_m": [
+            38.31,
+            35.19,
+            -23.44
+          ],
+          "observed_px": [
+            4143.99,
+            2383.15
+          ],
+          "projected_px": [
+            4144.09,
+            2385.45
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -16.8,
+            48.2,
+            10.2
+          ],
+          "observed_px": [
+            1239.35,
+            1685.2
+          ],
+          "projected_px": [
+            1239.71,
+            1684.92
+          ]
+        }
+      ],
+      "near_clip_m": 18.6
+    },
+    {
+      "photo_id": "55",
+      "path": "references/plans/structural_and_elevation_plates/55_Eiffel_1900_Planche_I_Elevation_Wikimedia_PD.jpg",
+      "recommended_global_step": 11,
+      "image_size_px": [
+        1517,
+        2896
+      ],
+      "position_xyz_m": [
+        0,
+        156,
+        3600
+      ],
+      "quaternion_xyzw": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "fov_y_deg": 8.26416513,
+      "view_offset": {
+        "enabled": true,
+        "fullWidth": 4000,
+        "fullHeight": 4000,
+        "offsetX": 1222.5,
+        "offsetY": 450.4426,
+        "width": 1517,
+        "height": 2896
+      },
+      "reprojection_rmse_px": 0.0045,
+      "landmarks_reprojection": [
+        {
+          "world_xyz_m": [
+            0,
+            0,
+            0
+          ],
+          "observed_px": [
+            777.5,
+            2749.2
+          ],
+          "projected_px": [
+            777.5,
+            2749.2
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -62.453,
+            0,
+            0
+          ],
+          "observed_px": [
+            297.24,
+            2749.2
+          ],
+          "projected_px": [
+            297.235,
+            2749.2
+          ]
+        },
+        {
+          "world_xyz_m": [
+            62.453,
+            0,
+            0
+          ],
+          "observed_px": [
+            1257.76,
+            2749.2
+          ],
+          "projected_px": [
+            1257.765,
+            2749.2
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -51.9535,
+            2.5,
+            0
+          ],
+          "observed_px": [
+            377.98,
+            2729.97
+          ],
+          "projected_px": [
+            377.977,
+            2729.975
+          ]
+        },
+        {
+          "world_xyz_m": [
+            51.9535,
+            2.5,
+            0
+          ],
+          "observed_px": [
+            1177.02,
+            2729.97
+          ],
+          "projected_px": [
+            1177.023,
+            2729.975
+          ]
+        },
+        {
+          "world_xyz_m": [
+            0,
+            39.4,
+            0
+          ],
+          "observed_px": [
+            777.5,
+            2446.21
+          ],
+          "projected_px": [
+            777.5,
+            2446.213
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -35.3475,
+            57.63,
+            0
+          ],
+          "observed_px": [
+            505.68,
+            2306.02
+          ],
+          "projected_px": [
+            505.677,
+            2306.024
+          ]
+        },
+        {
+          "world_xyz_m": [
+            35.3475,
+            57.63,
+            0
+          ],
+          "observed_px": [
+            1049.32,
+            2306.02
+          ],
+          "projected_px": [
+            1049.323,
+            2306.024
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -15.815,
+            115.73,
+            0
+          ],
+          "observed_px": [
+            655.88,
+            1859.23
+          ],
+          "projected_px": [
+            655.882,
+            1859.234
+          ]
+        },
+        {
+          "world_xyz_m": [
+            15.815,
+            115.73,
+            0
+          ],
+          "observed_px": [
+            899.12,
+            1859.23
+          ],
+          "projected_px": [
+            899.118,
+            1859.234
+          ]
+        },
+        {
+          "world_xyz_m": [
+            -9.325,
+            276.13,
+            0
+          ],
+          "observed_px": [
+            705.79,
+            625.76
+          ],
+          "projected_px": [
+            705.791,
+            625.756
+          ]
+        },
+        {
+          "world_xyz_m": [
+            9.325,
+            276.13,
+            0
+          ],
+          "observed_px": [
+            849.21,
+            625.76
+          ],
+          "projected_px": [
+            849.209,
+            625.756
+          ]
+        },
+        {
+          "world_xyz_m": [
+            0,
+            300.515,
+            0
+          ],
+          "observed_px": [
+            777.5,
+            438.23
+          ],
+          "projected_px": [
+            777.5,
+            438.235
+          ]
+        },
+        {
+          "world_xyz_m": [
+            0,
+            312.275,
+            0
+          ],
+          "observed_px": [
+            777.5,
+            347.8
+          ],
+          "projected_px": [
+            777.5,
+            347.8
+          ]
+        }
+      ],
+      "near_clip_m": 600,
+      "far_clip_m": 6500,
+      "hide_world_station_marker": true
+    }
+  ],
+  "total_calibrated_cameras": 11
+}

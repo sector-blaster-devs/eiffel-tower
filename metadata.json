@@ -1,0 +1,6 @@
+{
+  "name": "Remix Eiffel Tower 3D",
+  "description": "Explore Gustave Eiffel’s 1889 tower in 3D, reconstructed from original engineering plates and archival photos using Gemini 4 Carbon.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
